@@ -1,14 +1,21 @@
 require 'csv'
+require_relative '../app/models/legislator.rb'
+
+filename = '../db/data/legislators.csv'
 
 class SunlightLegislatorsImporter
   def self.import(filename)
-    csv = CSV.new(File.open(filename), :headers => true)
+    csv = CSV.new(File.open(filename), :headers => true, :header_converters => :symbol)
     csv.each do |row|
+      legislator = {}
       row.each do |field, value|
         # TODO: begin
+        legislator.merge!({field => value})
+
         raise NotImplementedError, "TODO: figure out what to do with this row and do it!"
         # TODO: end
       end
+      Legislator.create(legislator)
     end
   end
 end
