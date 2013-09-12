@@ -1,11 +1,12 @@
 require_relative '../config'
 
-class CreateSenators < ActiveRecord::Migration
+class CreateLegislators < ActiveRecord::Migration
   def change
-    create_table :senators do |t|
+    create_table :legislators do |t|
       t.string :title
       t.string :firstname
       t.string :middlename
+      t.string :lastname
       t.string :name_suffix
       t.string :nickname
       t.string :party
@@ -17,7 +18,7 @@ class CreateSenators < ActiveRecord::Migration
       t.string :fax
       t.string :website
       t.string :webform
-      t.string :contress_office
+      t.string :congress_office
       t.string :bioguide_id
       t.string :votesmart_id
       t.string :fec_id

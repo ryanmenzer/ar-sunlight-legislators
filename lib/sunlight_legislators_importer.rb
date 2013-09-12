@@ -12,7 +12,7 @@ class SunlightLegislatorsImporter
         # TODO: begin
         legislator.merge!({field => value})
 
-        raise NotImplementedError, "TODO: figure out what to do with this row and do it!"
+        # raise NotImplementedError, "TODO: figure out what to do with this row and do it!"
         # TODO: end
       end
       Legislator.create(legislator)
